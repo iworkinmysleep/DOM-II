@@ -1,13 +1,18 @@
 // Your code goes here
-const pic = document.querySelector('img');
-console.log(pic);
-pic.addEventListener("mouseover", () => {
-  pic.style.transform = "scale(1.2)";
-  pic.style.transition = "all 0.3s"
-});
-pic.addEventListener("mouseleave" , () => {
-  pic.style.transform = "scale(1)";
-});
+const pics = document.querySelectorAll('img');
+console.log(pics);
+pics.forEach(pic => {
+  pic.addEventListener('mouseover', () => {
+    pic.style.transform = 'scale(1.2)'
+    pic.style.transition = 'all 0.3s'
+  })
+})
+
+pics.forEach(pic => {
+  pic.addEventListener('mouseleave', () => {
+    pic.style.transform = 'scale(1)'
+  })
+})
 
 const changeHeading = document.querySelector(".logo-heading");
 console.log(changeHeading);
@@ -56,9 +61,8 @@ content.addEventListener('click', (event) => {
 });
 
 const preventRefresh = document.querySelectorAll('.nav-link');
-preventRefresh.addEventListener('click', () => {
-    element.preventDefault();
-    element.target.style.color="red";
+preventRefresh.addEventListener('click', (event) => {
+    event.target.preventDefault();
 });
  
 
